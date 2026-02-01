@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        //
+        Schema::create('trajet_routes', function (Blueprint $table) {
+            $table->foreignId('trajetId')->constrained('trajet');
+            $table->foreignId('routeId')->constrained('routes');
+            $table->timestamps();
+
+            $table->primary(['trajetId', 'routeId']);
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        //
+        Schema::dropIfExists('trajet_routes');
+    }
+};
