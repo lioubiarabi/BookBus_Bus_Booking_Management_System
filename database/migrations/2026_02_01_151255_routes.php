@@ -17,9 +17,8 @@ return new class extends Migration
             $table->decimal('price', 10, 2);
             $table->integer('duration');
             $table->integer('distance');
-            $table->foreignId('departure_city')->constrained('cities');
-            $table->foreignId('arrival_city')->constrained('cities');
-            $table->foreignId('bus_id')->constrained('buses');
+            $table->foreignId('cityA')->constrained('cities');
+            $table->foreignId('cityB')->constrained('cities');
             $table->timestamps();
         });
     }
