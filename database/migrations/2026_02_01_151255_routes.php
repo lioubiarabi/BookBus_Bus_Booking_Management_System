@@ -20,7 +20,6 @@ return new class extends Migration
             $table->foreignId('departure_city')->constrained('cities');
             $table->foreignId('arrival_city')->constrained('cities');
             $table->foreignId('bus_id')->constrained('buses');
-            $table->foreignId('driver_id')->constrained('users');
             $table->timestamps();
         });
     }
