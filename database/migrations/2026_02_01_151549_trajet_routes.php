@@ -13,11 +13,10 @@ return new class extends Migration
     {
         //
         Schema::create('trajet_routes', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('trajetId')->constrained('trajet');
             $table->foreignId('routeId')->constrained('routes');
             $table->timestamps();
-
-            $table->primary(['trajetId', 'routeId']);
         });
     }
 

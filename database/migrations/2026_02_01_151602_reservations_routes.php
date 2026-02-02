@@ -12,9 +12,10 @@ return new class extends Migration {
     {
         //
         Schema::create('reservations_routes', function (Blueprint $table) {
-            $table->foreignId('reservationId')->constrained('reservations');
-            $table->foreignId('trajetRouteId')->constrained('trajet_routes');
-            $table->primary(['reservationId','trajetRouteId']);
+            $table->id();
+            $table->foreignId('reservation_id')->constrained('reservations');
+            $table->foreignId('trajet_route_id')->constrained('trajet_routes');
+            $table->timestamps();
         });
     }
 
