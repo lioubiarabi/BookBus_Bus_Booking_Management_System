@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::create('trajet_routes', function (Blueprint $table) {
+        Schema::create('trajets_routes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('trajet_id')->constrained('trajet');
+            $table->foreignId('trajet_id')->constrained('trajets');
             $table->foreignId('route_id')->constrained('routes');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
     public function down(): void
     {
         //
-        Schema::dropIfExists('trajet_routes');
+        Schema::dropIfExists('trajets_routes');
     }
 };

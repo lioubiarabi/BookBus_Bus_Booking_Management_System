@@ -53,7 +53,7 @@ class TrajetSeeder extends Seeder
         // 3. Process each Path
         foreach ($paths as $pathData) {
             // A. Create the Trajet Record with the new time
-            $trajetId = DB::table('trajet')->insertGetId([
+            $trajetId = DB::table('trajets')->insertGetId([
                 'name' => $pathData['name'],
                 'direction' => $pathData['direction'],
                 'departure_time' => $pathData['departure_time'], // Insert the time
@@ -86,7 +86,7 @@ class TrajetSeeder extends Seeder
                         ->first();
 
                     if ($route) {
-                        DB::table('trajet_routes')->insert([
+                        DB::table('trajets_routes')->insert([
                             'trajet_id' => $trajetId,
                             'route_id' => $route->id,
                             'created_at' => now(),

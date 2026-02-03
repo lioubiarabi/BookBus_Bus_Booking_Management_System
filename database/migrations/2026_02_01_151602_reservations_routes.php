@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::create('reservations_routes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('reservation_id')->constrained('reservations');
-            $table->foreignId('trajet_route_id')->constrained('trajet_routes');
+            $table->foreignId('trajet_route_id')->constrained('trajets_routes');
             $table->timestamps();
         });
     }
