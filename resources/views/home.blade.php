@@ -81,7 +81,7 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden md:flex items-center gap-8">
-                    <a href="trips.html" class="text-gray-700 hover:text-secondary font-medium transition-colors">Trips</a>
+                    <a href="trips.blade.php" class="text-gray-700 hover:text-secondary font-medium transition-colors">Trips</a>
                     <a href="auth/login.html" class="px-5 py-2.5 text-gray-700 font-semibold hover:text-secondary transition-colors">Login</a>
                     <a href="auth/register.html" class="px-6 py-2.5 bg-secondary text-white font-semibold rounded-lg hover:bg-orange-600 transform hover:-translate-y-0.5 transition-all shadow-lg shadow-secondary/30">
                         Sign Up
@@ -100,7 +100,7 @@
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden border-t border-gray-100 bg-white">
             <div class="px-6 py-4 space-y-3">
-                <a href="trips.html" class="block text-gray-700 font-medium">Trips</a>
+                <a href="trips.blade.php" class="block text-gray-700 font-medium">Trips</a>
                 <a href="auth/login.html" class="block text-gray-700 font-medium">Login</a>
                 <a href="auth/register.html" class="block px-6 py-2.5 bg-secondary text-white font-semibold rounded-lg text-center">Sign Up</a>
             </div>
@@ -125,7 +125,7 @@
 
                 <!-- Search Form -->
                 <div class="bg-white/98 backdrop-blur-sm rounded-2xl p-8 shadow-2xl animate-fadeInUp animate-delay-2">
-                    <form action="trips.html" method="GET">
+                    <form action="trips.blade.php" method="GET">
                         <div class="grid md:grid-cols-3 gap-4 mb-6">
                             <div class="text-left">
                                 <label class="block text-gray-700 font-semibold mb-2 text-sm">From</label>
@@ -228,7 +228,7 @@
                     </div>
                     <div class="border-t border-gray-200 pt-4 flex justify-between items-center">
                         <span class="text-2xl font-black text-secondary">80 MAD</span>
-                        <a href="trips.html" class="px-5 py-2 bg-secondary text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors text-sm">
+                        <a href="trips.blade.php" class="px-5 py-2 bg-secondary text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors text-sm">
                             Book Now
                         </a>
                     </div>
@@ -251,7 +251,7 @@
                     </div>
                     <div class="border-t border-gray-200 pt-4 flex justify-between items-center">
                         <span class="text-2xl font-black text-secondary">120 MAD</span>
-                        <a href="trips.html" class="px-5 py-2 bg-secondary text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors text-sm">
+                        <a href="trips.blade.php" class="px-5 py-2 bg-secondary text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors text-sm">
                             Book Now
                         </a>
                     </div>
@@ -274,7 +274,7 @@
                     </div>
                     <div class="border-t border-gray-200 pt-4 flex justify-between items-center">
                         <span class="text-2xl font-black text-secondary">90 MAD</span>
-                        <a href="trips.html" class="px-5 py-2 bg-secondary text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors text-sm">
+                        <a href="trips.blade.php" class="px-5 py-2 bg-secondary text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors text-sm">
                             Book Now
                         </a>
                     </div>
@@ -297,7 +297,7 @@
                     </div>
                     <div class="border-t border-gray-200 pt-4 flex justify-between items-center">
                         <span class="text-2xl font-black text-secondary">70 MAD</span>
-                        <a href="trips.html" class="px-5 py-2 bg-secondary text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors text-sm">
+                        <a href="trips.blade.php" class="px-5 py-2 bg-secondary text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors text-sm">
                             Book Now
                         </a>
                     </div>
@@ -331,7 +331,7 @@
                 <div>
                     <h4 class="font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="trips.html" class="text-gray-400 hover:text-white transition-colors">Find Trips</a></li>
+                        <li><a href="trips.blade.php" class="text-gray-400 hover:text-white transition-colors">Find Trips</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
                     </ul>

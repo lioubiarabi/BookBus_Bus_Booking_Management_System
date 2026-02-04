@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - BookBus</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F172A',
+                        secondary: '#FF6B35',
+                        accent: '#00D9FF',
+                    },
+                    fontFamily: {
+                        display: ['Darker Grotesque', 'sans-serif'],
+                        body: ['DM Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Darker Grotesque', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center py-4">
+                <a href="../index.html" class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-secondary to-orange-400 rounded-xl flex items-center justify-center">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <span class="text-3xl font-display font-black text-primary">BookBus</span>
+                </a>
+
+                <div class="flex items-center gap-6">
+                    <a href="../trips.blade.php" class="text-gray-700 hover:text-secondary font-medium transition-colors">Find Trips</a>
+                    <a href="dashboard.html" class="text-gray-700 hover:text-secondary font-medium transition-colors">My Bookings</a>
+                    <a href="profile.html" class="text-secondary font-semibold">Profile</a>
+
+                    <div class="flex items-center gap-4 pl-6 border-l border-gray-200">
+                        <div class="text-right">
+                            <div class="text-sm text-gray-500">Welcome back,</div>
+                            <div class="font-semibold text-gray-800">John Doe</div>
+                        </div>
+                        <div class="w-10 h-10 bg-gradient-to-br from-secondary to-orange-400 rounded-full flex items-center justify-center text-white font-bold">
+                            JD
+                        </div>
+                        <button onclick="if(confirm('Are you sure you want to logout?')) window.location.href='../auth/login.html'"
+                            class="px-4 py-2 text-gray-600 hover:text-red-600 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-br from-primary to-slate-700 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <h1 class="text-5xl font-black mb-2">My Profile</h1>
+            <p class="text-xl text-gray-300">Manage your account settings and preferences</p>
+        </div>
+    </section>
+
+    <!-- Profile Content -->
+    <section class="py-12">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Sidebar -->
+                <div class="md:col-span-1">
+                    <div class="bg-white rounded-2xl p-6 shadow-lg sticky top-24">
+                        <!-- Avatar -->
+                        <div class="text-center mb-6">
+                            <div class="w-32 h-32 bg-gradient-to-br from-secondary to-orange-400 rounded-full flex items-center justify-center text-white text-5xl font-black mx-auto mb-4">
+                                JD
+                            </div>
+                            <h3 class="text-2xl font-black text-primary">John Doe</h3>
+                            <p class="text-gray-600">john.doe@email.com</p>
+                            <button class="mt-4 text-secondary font-semibold hover:text-orange-600 transition-colors text-sm">
+                                Change Avatar
+                            </button>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="border-t border-gray-200 pt-6 space-y-4">
+                            <div>
+                                <div class="text-sm text-gray-500 mb-1">Total Trips</div>
+                                <div class="text-3xl font-black text-primary">12</div>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500 mb-1">Member Since</div>
+                                <div class="font-semibold text-gray-800">January 2025</div>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500 mb-1">Account Status</div>
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 text-xs font-bold rounded-full">
+                                    Active
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="md:col-span-2 space-y-6">
+                    <!-- Personal Information -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-3xl font-black text-primary">Personal Information</h2>
+                            <button onclick="toggleEdit('personalInfo')" class="text-secondary font-semibold hover:text-orange-600 transition-colors">
+                                Edit
+                            </button>
+                        </div>
+
+                        <form id="personalInfo" onsubmit="saveProfile(event)">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">First Name</label>
+                                    <input type="text" value="John" disabled
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg bg-gray-50 disabled:opacity-75">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Last Name</label>
+                                    <input type="text" value="Doe" disabled
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg bg-gray-50 disabled:opacity-75">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                                    <input type="email" value="john.doe@email.com" disabled
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg bg-gray-50 disabled:opacity-75">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                                    <input type="tel" value="+212 612 345 678" disabled
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg bg-gray-50 disabled:opacity-75">
+                                </div>
+
+                                <div class="md:col-span-2">
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Date of Birth</label>
+                                    <input type="date" value="1990-01-15" disabled
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg bg-gray-50 disabled:opacity-75">
+                                </div>
+                            </div>
+
+                            <div class="hidden mt-6 flex gap-3" id="personalInfoActions">
+                                <button type="submit" class="px-6 py-3 bg-secondary text-white font-bold rounded-lg hover:bg-orange-600 transition-all">
+                                    Save Changes
+                                </button>
+                                <button type="button" onclick="toggleEdit('personalInfo')" class="px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-gray-400 transition-all">
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Change Password -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <h2 class="text-3xl font-black text-primary mb-6">Change Password</h2>
+
+                        <form onsubmit="changePassword(event)">
+                            <div class="space-y-5">
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Current Password</label>
+                                    <input type="password" required
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-secondary focus:ring-4 focus:ring-secondary/10 outline-none">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">New Password</label>
+                                    <input type="password" required
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-secondary focus:ring-4 focus:ring-secondary/10 outline-none">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Confirm New Password</label>
+                                    <input type="password" required
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-secondary focus:ring-4 focus:ring-secondary/10 outline-none">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="mt-6 px-8 py-3 bg-secondary text-white font-bold rounded-lg hover:bg-orange-600 transition-all">
+                                Update Password
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Preferences -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <h2 class="text-3xl font-black text-primary mb-6">Preferences</h2>
+
+                        <div class="space-y-5">
+                            <div class="flex items-center justify-between py-4 border-b border-gray-200">
+                                <div>
+                                    <div class="font-semibold text-gray-800">Email Notifications</div>
+                                    <div class="text-sm text-gray-600">Receive booking confirmations and updates</div>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" checked class="sr-only peer">
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-secondary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+                                </label>
+                            </div>
+
+                            <div class="flex items-center justify-between py-4 border-b border-gray-200">
+                                <div>
+                                    <div class="font-semibold text-gray-800">SMS Notifications</div>
+                                    <div class="text-sm text-gray-600">Get trip reminders via SMS</div>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-secondary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+                                </label>
+                            </div>
+
+                            <div class="flex items-center justify-between py-4 border-b border-gray-200">
+                                <div>
+                                    <div class="font-semibold text-gray-800">Promotional Emails</div>
+                                    <div class="text-sm text-gray-600">Receive special offers and discounts</div>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" checked class="sr-only peer">
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-secondary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+                                </label>
+                            </div>
+
+                            <div class="pt-4">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Preferred Language</label>
+                                <select class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-secondary focus:ring-4 focus:ring-secondary/10 outline-none">
+                                    <option>English</option>
+                                    <option>Français</option>
+                                    <option>العربية</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Danger Zone -->
+                    <div class="bg-red-50 border-2 border-red-200 rounded-2xl p-8">
+                        <h2 class="text-2xl font-black text-red-600 mb-4">Danger Zone</h2>
+                        <p class="text-gray-700 mb-6">Once you delete your account, there is no going back. Please be certain.</p>
+                        <button onclick="if(confirm('Are you absolutely sure? This action cannot be undone.')) alert('Account deletion initiated')"
+                            class="px-6 py-3 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition-all">
+                            Delete Account
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 mb-8">
+                <div>
+                    <h3 class="text-2xl font-display font-bold mb-4">BookBus</h3>
+                    <p class="text-gray-400">Your trusted partner for intercity bus travel across Morocco.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../trips.blade.php" class="text-gray-400 hover:text-white transition-colors">Find Trips</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center pt-8 border-t border-gray-700">
+                <p class="text-gray-400">&copy; 2026 BookBus. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleEdit(formId) {
+            const form = document.getElementById(formId);
+            const inputs = form.querySelectorAll('input');
+            const actions = document.getElementById(formId + 'Actions');
+
+            inputs.forEach(input => {
+                if (input.disabled) {
+                    input.disabled = false;
+                    input.classList.remove('bg-gray-50', 'disabled:opacity-75');
+                    input.classList.add('focus:border-secondary', 'focus:ring-4', 'focus:ring-secondary/10');
+                } else {
+                    input.disabled = true;
+                    input.classList.add('bg-gray-50', 'disabled:opacity-75');
+                    input.classList.remove('focus:border-secondary', 'focus:ring-4', 'focus:ring-secondary/10');
+                }
+            });
+
+            actions.classList.toggle('hidden');
+            actions.classList.toggle('flex');
+        }
+
+        function saveProfile(event) {
+            event.preventDefault();
+            alert('Profile updated successfully!');
+            toggleEdit('personalInfo');
+        }
+
+        function changePassword(event) {
+            event.preventDefault();
+            alert('Password changed successfully!');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
