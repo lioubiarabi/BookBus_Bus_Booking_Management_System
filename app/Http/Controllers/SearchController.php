@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TrajetModel;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class searchController extends Controller
+class SearchController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $cities = \App\Models\City::all();
+        return view('home', compact('cities') );
     }
 
     /**
@@ -35,7 +35,7 @@ class searchController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TrajetModel $trajetModel)
+    public function show(string $id)
     {
         //
     }
@@ -43,7 +43,7 @@ class searchController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(TrajetModel $trajetModel)
+    public function edit(string $id)
     {
         //
     }
@@ -51,7 +51,7 @@ class searchController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, TrajetModel $trajetModel)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -59,7 +59,7 @@ class searchController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TrajetModel $trajetModel)
+    public function destroy(string $id)
     {
         //
     }
