@@ -1,59 +1,163 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚌 BookBus — Bus Booking Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> A full-stack intercity bus ticket booking platform built with Laravel — inspired by marKoub.ma. Features authentication, trip search, seat selection, booking management, and an admin dashboard.
 
-## About Laravel
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP%208.2+-777BB4?style=flat-square&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🔐 Authentication
+- Registration and login via Laravel Breeze
+- Role-based access: **Admin**, **Passenger**
+- Secure session management
 
-## Learning Laravel
+### 🔍 Trip Search
+- Search trips by origin, destination and date
+- Filter by bus company, price, and departure time
+- Real-time seat availability display
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 🎫 Booking Flow
+- Seat selection on interactive bus layout
+- Passenger details form with validation
+- Booking confirmation with summary
+- Ticket generation (printable)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 📂 My Bookings
+- View all past and upcoming reservations
+- Cancel a booking before departure
+- Download/print ticket
 
-## Laravel Sponsors
+### 🛠 Admin Dashboard
+- Manage bus companies, routes and trips
+- View and manage all bookings
+- User management
+- Revenue and occupancy statistics
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 📁 Project Structure
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```
+BookBus/
+├── app/
+│   ├── Http/Controllers/   # Route controllers
+│   ├── Models/             # Eloquent models
+│   └── Policies/           # Authorization policies
+├── database/
+│   ├── migrations/         # DB schema
+│   └── seeders/            # Sample data
+├── resources/
+│   ├── views/              # Blade templates
+│   └── css/ js/            # Frontend assets
+├── routes/
+│   ├── web.php             # Web routes
+│   └── api.php             # API routes
+├── documentation/          # ERD, UML diagrams, DOCUMENTATION.md
+├── tests/                  # PHPUnit tests
+├── .env.example
+└── vite.config.js
+```
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🗄️ Database Schema
 
-## Code of Conduct
+| Table | Description |
+|---|---|
+| `users` | Passengers and admins |
+| `companies` | Bus companies |
+| `routes` | Origin → destination routes |
+| `trips` | Scheduled departures with price & seats |
+| `bookings` | Reservations linked to user + trip |
+| `seats` | Seat map per trip |
+| `payments` | Payment records per booking |
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 🛠 Tech Stack
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+| Technology | Usage |
+|---|---|
+| Laravel 10+ | MVC framework, routing, Eloquent ORM |
+| PHP 8.2+ | Backend logic |
+| MySQL | Relational database |
+| Laravel Breeze | Authentication scaffolding |
+| Blade | Server-side templating |
+| TailwindCSS | Responsive UI |
+| Vite | Asset bundling |
+| PHPUnit | Automated testing |
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🚀 Getting Started
+
+```bash
+git clone https://github.com/lioubiarabi/BookBus_Bus_Booking_Management_System.git
+cd BookBus_Bus_Booking_Management_System
+composer install
+npm install && npm run build
+cp .env.example .env
+php artisan key:generate
+```
+
+Configure your database in `.env`, then:
+
+```bash
+php artisan migrate --seed
+php artisan serve
+```
+
+Open `http://localhost:8000`
+
+### Test Credentials
+```
+Admin:     admin@bookbus.ma   / password
+Passenger: user@bookbus.ma    / password
+```
+
+---
+
+## 📄 Documentation
+
+All diagrams and analysis are in the `documentation/` folder:
+- **ERD** — full database schema with relations
+- **UML Class Diagram** — domain model
+- **Use Case Diagram** — actors and interactions
+- **DOCUMENTATION.md** — domain analysis and architecture decisions
+
+---
+
+## 🎯 Project Context
+
+Built as a simplified clone of [marKoub.ma](https://markoub.ma), a Moroccan intercity bus booking platform. The goal was to learn Laravel by building a real-world domain application from domain analysis to deployed product.
+
+**Duration:** 3 days foundation + full build (Jan 23 — Feb 2026)
+
+---
+
+## 💡 What I Learned
+
+- Setting up a full Laravel project from scratch (Breeze, Vite, Eloquent)
+- Domain analysis before coding — ERD, use cases, class diagrams
+- Laravel routing, middleware, and controllers
+- Eloquent ORM relationships (hasMany, belongsTo, belongsToMany)
+- Blade templating with layouts and components
+- Role-based authorization with policies
+- Database migrations and seeders
+
+---
+
+## 👤 Author
+
+**Lioubi Arabi** — Youcode Web Development Student  
+[![GitHub](https://img.shields.io/badge/GitHub-lioubiarabi-181717?style=flat-square&logo=github)](https://github.com/lioubiarabi)
+
+---
+
+*Built to understand Laravel the right way — domain first, code second 🚌*
